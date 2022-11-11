@@ -1,5 +1,0 @@
-D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerConsoleThreadTimerObjVer\obj\Debug\net6.0\AppTimerConsoleThreadTimerObjVer.csproj.AssemblyReference.cache
-D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerConsoleThreadTimerObjVer\obj\Debug\net6.0\AppTimerConsoleThreadTimerObjVer.GeneratedMSBuildEditorConfig.editorconfig
-D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerConsoleThreadTimerObjVer\obj\Debug\net6.0\AppTimerConsoleThreadTimerObjVer.AssemblyInfoInputs.cache
-D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerConsoleThreadTimerObjVer\obj\Debug\net6.0\AppTimerConsoleThreadTimerObjVer.AssemblyInfo.cs
-D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerConsoleThreadTimerObjVer\obj\Debug\net6.0\AppTimerConsoleThreadTimerObjVer.csproj.CoreCompileInputs.cache

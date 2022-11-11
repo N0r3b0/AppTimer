@@ -1,30 +1,18 @@
-﻿using System;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.IO;
-using System.Threading;
-using System.Collections;
-
-namespace AppTimer
+﻿namespace AppTimer
 {
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-            
-        }
-    }
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Threading;
+    using System.Collections;
+
     class Timer
     {
         string processName = "";
         uint[] timeArr = new uint[2]; //chosen process timer
+        DateTime startTime;
+        DateTime endTime;
+
         static ArrayList processesNameList = new ArrayList(); //arraylist for processess names
         static Process[] allProcesses = Process.GetProcesses(); //gets all the running processess
 
@@ -72,52 +60,60 @@ namespace AppTimer
         */
         public void timeCounter()
         {
-            uint seconds = 0;
-            uint minutes = 0;
-            uint hours = 0;
+            startTime = DateTime.Now;
             while (true)
             {
                 if (isRunning() == false)
                     break;
                 Thread.Sleep(1000);
-                seconds++;
-                if (seconds == 60)
-                {
-                    seconds = 0;
-                    minutes++;
-                }
-                if (minutes == 60)
-                {
-                    minutes = 0;
-                    hours++;
-                }
             }
-            uint[] timeCuntArr = { hours, minutes, seconds };
+            endTime = DateTime.Now;
+            TimeSpan timeSpan = endTime - startTime;
+            uint[] timeCuntArr = {uint.Parse(timeSpan.Hours.ToString()),
+                                  uint.Parse(timeSpan.Minutes.ToString()),
+                                  uint.Parse(timeSpan.Seconds.ToString())};
             timeArr = timeCuntArr;
         }
         public string timeArrToString()
         {
-            return "Application: " + processName + "\nHours: " + timeArr[0] + "\nMinutes: " + timeArr[1] + "\nSeconds: " + timeArr[2];
+            return "Application: " + processName + "\nHours: " + timeArr[0] + "\nMinutes: " + timeArr[1] + "\nSeconds: " + timeArr[2] + "\n";
         }
 
         public void sendToFile()
         {
-            File.WriteAllText(@"D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\time.txt", timeArrToString());
+            DateTime localDate = DateTime.Now;
+            string date = localDate.ToString();
+            string path = @"D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\" + processName + ".txt";
+            File.AppendAllText(path, date + "\n" + timeArrToString());
+        }
+        public static string chooseProcess(ArrayList procList)
+        {
+            Console.WriteLine("Choose program to follow");
+            for (int i = 0; i < procList.Count; i++)
+                Console.WriteLine(procList[i].ToString());
+            string userInput = Console.ReadLine();
+            return userInput;
         }
         static void Main(string[] args)
         {
             ArrayList list1 = listOfProcessess();
-            Console.WriteLine("choose process to follow");
-            for (int i = 0; i < list1.Count; i++)
-            {
-                Console.WriteLine(list1[i].ToString());
-            }
-            string userInput = Console.ReadLine();
+            string userInput = chooseProcess(list1);
             Timer timer1 = new Timer(userInput);
             timer1.timeCounter();
             timer1.sendToFile();
 
-            Console.ReadKey();
+            //string userInput2 = chooseProcess(list1);
+            //Timer timer2 = new Timer(userInput2);
+
+            //string userInput3 = chooseProcess(list1);
+            //Timer timer3 = new Timer(userInput3);
+
+            //timer2.timeCounter();
+            // timer3.timeCounter();
+
+            //timer2.sendToFile();
+            // timer3.sendToFile();
         }
+
     }
 }

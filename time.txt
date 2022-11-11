@@ -1,4 +1,4 @@
-Application: mspaint
+Application: Spotify
 Hours: 0
 Minutes: 0
-Seconds: 9
+Seconds: 0
