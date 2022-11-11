@@ -1,0 +1,9 @@
+@Jekins - Discord
+File.AppendAllText Method (System.IO) | Microsoft Learn – Opera
+AppTimer - Microsoft Visual Studio
+projekt2sem - Microsoft Visual Studio
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\bin\Debug\AppTimer.exe
+Microsoft Text Input Application
+NVIDIA GeForce Overlay
+Spotify Premium
+AppTimer (Running) - Microsoft Visual Studio

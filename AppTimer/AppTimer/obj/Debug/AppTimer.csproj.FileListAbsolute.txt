@@ -1,0 +1,11 @@
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.AssemblyReference.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.SuggestedBindingRedirects.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.Form1.resources
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.Properties.Resources.resources
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.GenerateResource.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.CoreCompileInputs.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\bin\Debug\AppTimer.exe.config
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\bin\Debug\AppTimer.exe
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\bin\Debug\AppTimer.pdb
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.exe
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimer\AppTimer\obj\Debug\AppTimer.pdb

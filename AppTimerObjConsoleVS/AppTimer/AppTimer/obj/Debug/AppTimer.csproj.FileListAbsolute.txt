@@ -1,0 +1,8 @@
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\bin\Debug\AppTimer.exe.config
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\bin\Debug\AppTimer.exe
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\bin\Debug\AppTimer.pdb
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.AssemblyReference.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.SuggestedBindingRedirects.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\obj\Debug\AppTimer.csproj.CoreCompileInputs.cache
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\obj\Debug\AppTimer.exe
+D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\AppTimerObjConsoleVS\AppTimer\AppTimer\obj\Debug\AppTimer.pdb
