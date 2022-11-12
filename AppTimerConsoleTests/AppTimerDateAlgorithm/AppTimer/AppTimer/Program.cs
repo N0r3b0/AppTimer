@@ -102,6 +102,9 @@
             timer1.timeCounter();
             timer1.sendToFile();
 
+            //Timer timer2 = new Timer(userInput);
+
+
             //string userInput2 = chooseProcess(list1);
             //Timer timer2 = new Timer(userInput2);
 
