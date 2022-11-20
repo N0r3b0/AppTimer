@@ -6,7 +6,7 @@
     using System.Threading;
     using System.Collections;
 
-    class Timer
+    class AppTimer
     {
         string processName = "";
         uint[] timeArr = new uint[2]; //chosen process timer
@@ -30,7 +30,7 @@
             }
             return processesNameList;
         }
-        public Timer(string processName) //contructor
+        public AppTimer(string processName) //contructor
         {
             this.processName = processName;
         }
@@ -94,28 +94,27 @@
             string userInput = Console.ReadLine();
             return userInput;
         }
+
+        //async functions need to return Task, if they need to return other datatype u need to put it in <> --> Task<String>
+        //c# does an exception for events
+        //if function is async then put an async at the end of its name --> doSomethingAsync
         static void Main(string[] args)
         {
             ArrayList list1 = listOfProcessess();
-            string userInput = chooseProcess(list1);
-            Timer timer1 = new Timer(userInput);
+            string userInput;
+
+            userInput = chooseProcess(list1);
+            AppTimer timer1 = new AppTimer(userInput);
             timer1.timeCounter();
+
+            userInput = chooseProcess(list1);
+            AppTimer timer2 = new AppTimer(userInput);
+            timer2.timeCounter();
+
             timer1.sendToFile();
 
-            //Timer timer2 = new Timer(userInput);
-
-
-            //string userInput2 = chooseProcess(list1);
-            //Timer timer2 = new Timer(userInput2);
-
-            //string userInput3 = chooseProcess(list1);
-            //Timer timer3 = new Timer(userInput3);
-
-            //timer2.timeCounter();
-            // timer3.timeCounter();
-
-            //timer2.sendToFile();
-            // timer3.sendToFile();
+            timer1.sendToFile();
+            timer2.sendToFile();
         }
 
     }
