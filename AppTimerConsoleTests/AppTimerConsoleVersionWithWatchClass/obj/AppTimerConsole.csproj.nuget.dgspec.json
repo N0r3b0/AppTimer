@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\AppTimerConsole.csproj": {}
+    "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\AppTimerConsole.csproj": {}
   },
   "projects": {
-    "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\AppTimerConsole.csproj": {
+    "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\AppTimerConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\AppTimerConsole.csproj",
+        "projectUniqueName": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\AppTimerConsole.csproj",
         "projectName": "AppTimerConsole",
-        "projectPath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\AppTimerConsole.csproj",
+        "projectPath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\AppTimerConsole.csproj",
         "packagesPath": "C:\\Users\\wfedd\\.nuget\\packages\\",
-        "outputPath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\obj\\",
+        "outputPath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wfedd\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.IO;
-using System.Threading;
-using System.Collections;
 
 namespace AppTimer
 {
@@ -18,22 +19,12 @@ namespace AppTimer
         public Form1()
         {
             InitializeComponent();
-            
+            processesList();
         }
-    }
-    class Timer
-    {
-        string processName = "";
-        uint[] timeArr = new uint[2]; //chosen process timer
-        static ArrayList processesNameList = new ArrayList(); //arraylist for processess names
-        static Process[] allProcesses = Process.GetProcesses(); //gets all the running processess
-
-
-        /*
-         listOfProcesses contain only taskbar processess names.
-         */
-        public static ArrayList listOfProcessess()
+        public ArrayList listOfProcessess() //function originaly from AppTimer used to get all the processes and mark the important ones
         {
+            Process[] allProcesses = Process.GetProcesses();
+            ArrayList processesNameList = new ArrayList();
             for (int i = 0; i < allProcesses.Length; i++)
             {
                 Process workingProcess = allProcesses[i];
@@ -42,7 +33,45 @@ namespace AppTimer
             }
             return processesNameList;
         }
-        public Timer(string processName) //contructor
+        public void processesList()
+        {
+            boxOfProcesses.DataSource = listOfProcessess(); //connecting listbox with array of important processes
+        }
+        LinkedList<string> selectedProcesses = new LinkedList<string>();  //list for currently monitored processes
+        private async void boxOfProcesses_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string selectedProcess = boxOfProcesses.SelectedItem.ToString();
+            if (selectedProcesses.Contains(selectedProcess)) //checking if process was already selected
+            {
+                MessageBox.Show("Ten proces jest już wybrany");
+                return;
+            }
+            selectedProcesses.AddLast(selectedProcess);         //adding to list of monitored processes 
+
+            MessageBox.Show("Timer for " + selectedProcess + " started");
+            AppTimer timer1 = new AppTimer(selectedProcess);
+
+            Task task = timer1.timeCounterAsync();      //creating task for timer
+            await task;                                //awaiting for counter to finish
+            if (task.IsCompleted == true)   //if counter finished, then show message
+                timer1.sendToFile();
+            selectedProcesses.Remove(selectedProcess);  //removing process that we ended
+            MessageBox.Show("Timer for " + selectedProcess + " stopped");
+        }
+
+        private void button2_Click(object sender, EventArgs e) //refresh processes list in boxOfProcessess
+        {
+            processesList();
+        }
+    }
+
+    class AppTimer
+    {
+        string processName = "";
+        uint[] timeArr = new uint[2]; //chosen process timer
+        DateTime startTime;
+        DateTime endTime;
+        public AppTimer(string processName) //contructor
         {
             this.processName = processName;
         }
@@ -72,52 +101,79 @@ namespace AppTimer
         */
         public void timeCounter()
         {
-            uint seconds = 0;
-            uint minutes = 0;
-            uint hours = 0;
+            startTime = DateTime.Now;
             while (true)
             {
                 if (isRunning() == false)
                     break;
                 Thread.Sleep(1000);
-                seconds++;
-                if (seconds == 60)
-                {
-                    seconds = 0;
-                    minutes++;
-                }
-                if (minutes == 60)
-                {
-                    minutes = 0;
-                    hours++;
-                }
             }
-            uint[] timeCuntArr = { hours, minutes, seconds };
+            endTime = DateTime.Now;
+            TimeSpan timeSpan = endTime - startTime;
+            uint[] timeCuntArr = {uint.Parse(timeSpan.Hours.ToString()),
+                                  uint.Parse(timeSpan.Minutes.ToString()),
+                                  uint.Parse(timeSpan.Seconds.ToString())};
+            timeArr = timeCuntArr;
+        }
+        public async Task timeCounterAsync()
+        {
+            startTime = DateTime.Now;
+            while (true)
+            {
+                if (isRunning() == false)
+                    break;
+                //Thread.Sleep(1000);
+                await Task.Delay(1000);
+            }
+            endTime = DateTime.Now;
+            TimeSpan timeSpan = endTime - startTime;
+            uint[] timeCuntArr = {uint.Parse(timeSpan.Hours.ToString()),
+                                  uint.Parse(timeSpan.Minutes.ToString()),
+                                  uint.Parse(timeSpan.Seconds.ToString())};
             timeArr = timeCuntArr;
         }
         public string timeArrToString()
         {
-            return "Application: " + processName + "\nHours: " + timeArr[0] + "\nMinutes: " + timeArr[1] + "\nSeconds: " + timeArr[2];
+            return "Application: " + processName + "\nHours: " + timeArr[0] + "\nMinutes: " + timeArr[1] + "\nSeconds: " + timeArr[2] + "\n";
         }
 
         public void sendToFile()
         {
-            File.WriteAllText(@"D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\time.txt", timeArrToString());
+            DateTime localDate = DateTime.Now;
+            string date = localDate.ToString();
+            string path = @"D:\Programowanie\Programowanie_git\1_MojeProjekty\AppTimer\" + processName + ".txt";
+            File.AppendAllText(path, date + "\n" + timeArrToString());
         }
-        static void Main(string[] args)
+        public static string chooseProcess(ArrayList procList)
         {
-            ArrayList list1 = listOfProcessess();
-            Console.WriteLine("choose process to follow");
-            for (int i = 0; i < list1.Count; i++)
-            {
-                Console.WriteLine(list1[i].ToString());
-            }
+            Console.WriteLine("Choose program to follow");
+            for (int i = 0; i < procList.Count; i++)
+                Console.WriteLine(procList[i].ToString());
             string userInput = Console.ReadLine();
-            Timer timer1 = new Timer(userInput);
-            timer1.timeCounter();
-            timer1.sendToFile();
-
-            Console.ReadKey();
+            return userInput;
         }
+
+        //async functions need to return Task, if they need to return other datatype u need to put it in <> --> Task<String>
+        //c# does an exception for events
+        //if function is async then put an async at the end of its name --> doSomethingAsync
+        //static void Main(string[] args)
+        //{
+        //    ArrayList list1 = listOfProcessess();
+        //    string userInput;
+
+        //    userInput = chooseProcess(list1);
+        //    AppTimer timer1 = new AppTimer(userInput);
+        //    timer1.timeCounter();
+
+        //    userInput = chooseProcess(list1);
+        //    AppTimer timer2 = new AppTimer(userInput);
+        //    timer2.timeCounter();
+
+        //    timer1.sendToFile();
+
+        //    timer1.sendToFile();
+        //    timer2.sendToFile();
+        //}
+
     }
 }

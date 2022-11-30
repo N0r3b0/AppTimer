@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{62739E6D-EDC2-4C31-B39F-E891C4E3FBB9}</ProjectGuid>
+    <ProjectGuid>{2F065CE7-91B1-4F9E-A04F-D316A579CF62}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AppTimer</RootNamespace>
-    <AssemblyName>AppTimer</AssemblyName>
+    <RootNamespace>AppTImer</RootNamespace>
+    <AssemblyName>AppTImer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

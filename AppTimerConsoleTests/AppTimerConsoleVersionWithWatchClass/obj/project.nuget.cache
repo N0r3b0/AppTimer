@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6nhpZ2uWW7KuyxSEWbTWE97VenS6nSAiGISwb0ZEkYLWcittiA8SovADFOLwrjh0WyRn4fsu2QqHlOniyZB4gA==",
+  "dgSpecHash": "A+zFO0HXLz00/GVVThaMjuxIoxInFXVns2YHMFoFSSTblm/PFv4wVJyc9NsRPX1OoAifYq+6DbwelJ5PoJSPzg==",
   "success": true,
-  "projectFilePath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsole\\AppTimerConsole.csproj",
+  "projectFilePath": "D:\\Programowanie\\Programowanie_git\\1_MojeProjekty\\AppTimer\\AppTimerConsoleTests\\AppTimerConsoleVersionWithWatchClass\\AppTimerConsole.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
