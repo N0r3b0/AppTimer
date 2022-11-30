@@ -57,6 +57,7 @@ namespace AppTimer
                 timer1.sendToFile();
             selectedProcesses.Remove(selectedProcess);  //removing process that we ended
             MessageBox.Show("Timer for " + selectedProcess + " stopped");
+            processesList(); //refresh the boxOfProcesses
         }
 
         private void button2_Click(object sender, EventArgs e) //refresh processes list in boxOfProcessess
@@ -152,28 +153,5 @@ namespace AppTimer
             string userInput = Console.ReadLine();
             return userInput;
         }
-
-        //async functions need to return Task, if they need to return other datatype u need to put it in <> --> Task<String>
-        //c# does an exception for events
-        //if function is async then put an async at the end of its name --> doSomethingAsync
-        //static void Main(string[] args)
-        //{
-        //    ArrayList list1 = listOfProcessess();
-        //    string userInput;
-
-        //    userInput = chooseProcess(list1);
-        //    AppTimer timer1 = new AppTimer(userInput);
-        //    timer1.timeCounter();
-
-        //    userInput = chooseProcess(list1);
-        //    AppTimer timer2 = new AppTimer(userInput);
-        //    timer2.timeCounter();
-
-        //    timer1.sendToFile();
-
-        //    timer1.sendToFile();
-        //    timer2.sendToFile();
-        //}
-
     }
 }

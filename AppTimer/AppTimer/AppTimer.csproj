@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2F065CE7-91B1-4F9E-A04F-D316A579CF62}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AppTImer</RootNamespace>
-    <AssemblyName>AppTImer</AssemblyName>
+    <RootNamespace>AppTimer</RootNamespace>
+    <AssemblyName>AppTimer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

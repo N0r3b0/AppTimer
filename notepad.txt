@@ -8,3 +8,13 @@ Application: notepad
 Hours: 0
 Minutes: 0
 Seconds: 3
+30.11.2022 08:12:35
+Application: notepad
+Hours: 0
+Minutes: 0
+Seconds: 3
+30.11.2022 08:17:25
+Application: notepad
+Hours: 0
+Minutes: 0
+Seconds: 2
